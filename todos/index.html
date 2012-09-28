@@ -21,6 +21,7 @@
   <![endif]-->
 
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="../lib/handlebars-1.0.0.beta.6.js"></script>
   <script type="text/javascript" src="../lib/ember.min.js"></script>
 </head>
 <body>
@@ -42,9 +43,9 @@
     {{view Em.Checkbox checkedBinding="Todos.todosController.allAreDone"}}Mark All as Done
   </label>
 
-  {{#collection contentBinding="Todos.todosController" tagName="ul" itemClassBinding="content.isDone"}}
+  {{#collection contentBinding="Todos.todosController" tagName="ul" itemClassBinding="view.content.isDone"}}
     <label>
-      {{view Em.Checkbox checkedBinding="content.isDone"}}{{content.title}}
+      {{view Em.Checkbox checkedBinding="view.content.isDone"}}{{view.content.title}}
     </label>
   {{/collection}}
   </script>
